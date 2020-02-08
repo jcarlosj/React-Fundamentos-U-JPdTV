@@ -1,5 +1,6 @@
 import React from 'react';
 
+/** Function Declaration */
 function Header() {
     /** Propiedades */
     const user = {
