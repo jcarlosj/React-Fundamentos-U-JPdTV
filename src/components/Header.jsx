@@ -1,21 +1,12 @@
 import React from 'react';
 
 /** Function Declaration */
-function Header() {
-    /** Propiedades */
-    const user = {
-             name: 'Ana Maria',
-             last: 'Castro'
-          },
-          siteTitle = 'Tienda Virtual',
-          h2Element = <h2 id="site-header" className="site-header site-title">{ siteTitle }</h2>,
-          imgElement = <div tabIndex="0">
-                         <img src={ user.avatarUrl } alt=""></img>
-                       </div>;
+function Header( props ) {
+    console.log( props );
 
     function getGreeting( user ) {
         if( user ) {
-            return <h4>Bienvenid@, { user.name }! estamos para servirte</h4>;
+            return <h4>Bienvenid@, { user }! estamos para servirte</h4>;
         }
         return <h4>Los mejores productos y servicios solo para ti.</h4>;
     }
@@ -23,9 +14,8 @@ function Header() {
     /** */
     return (
         <div>
-            { h2Element }
-            { getGreeting( user ) }
-            { user.avatarUrl !== undefined ? imgElement : '' }
+            <h2 id="site-header" className="site-header site-title">{ props.title }</h2>
+            { getGreeting( props.user ) }
         </div>
     );
 }
