@@ -1,8 +1,8 @@
 import React from 'react';
 
 /** Function Declaration */
-function Header( props ) {
-    console.log( props );
+function Header({ title, user }) {      // Destructuración del parámetro 'props'
+    console.log( title, user );
 
     function getGreeting( user ) {
         if( user ) {
@@ -14,8 +14,8 @@ function Header( props ) {
     /** */
     return (
         <div>
-            <h2 id="site-header" className="site-header site-title">{ props.title }</h2>
-            { getGreeting( props.user ) }
+            <h2 id="site-header" className="site-header site-title">{ title }</h2>
+            { getGreeting( user ) }
         </div>
     );
 }

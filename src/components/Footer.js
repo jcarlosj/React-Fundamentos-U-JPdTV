@@ -5,9 +5,9 @@ import React from 'react';
     return, para React los paréntesis cuando se declara este tipo de función
     implicitamente es un return.
 */
-const Footer = () => (
+const Footer = ({ year }) => (
         <footer>
-            <small>React &copy; 2020</small>
+            <small>React &copy; { year }</small>
         </footer>
     );
 
