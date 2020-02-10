@@ -17,6 +17,9 @@ function App() {
         { id: 4, name: 'Camiseta JavaScript', price: 20 }
     ]);
 
+    /** Carrito de Compras */
+    const [ stateShoppingCart, setShoppingCart ] = useState([]);
+
     return (
         <Fragment>
             <Header
@@ -28,6 +31,9 @@ function App() {
                 <Product
                     key={ product.id }              // En un listado de componentes cada uno debe tener un key que lo haga unico
                     product={ product }             // Pasamos como Props los datos al Componente de Producto en este caso todo el objeto de cada producto
+                    products={ stateProducts }      // Pasamos todos los productos disponibles
+                    cart={ stateShoppingCart }      // Pasamos estado actual del carrito de compras
+                    addToCart={ setShoppingCart }   // Pasamos la funcion que modifica el estado actual del carrito de compras
                 />
             )) }
 

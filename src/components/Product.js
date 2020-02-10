@@ -1,12 +1,13 @@
 import React from 'react';
 
-const Product = ({ product }) => {              // Destructuración del Props pasado como argumento
+const Product = ({ product, products, cart, addToCart }) => {              // Destructuración del Props pasado como argumento
 
     const { id, name, price } = product;        // Destructuración de las propiedades de producto
 
     /** Agregar Producto al carrito */
     const selectProduct = ( id ) => {
-        console.log( `Seleccionó Producto ${ id }` );
+        const product = products .filter( ( product ) => product .id === id );      // Filtra producto por ID
+        console.log( `Seleccionó Producto ${ id }`, product[ 0 ] );
     }
 
     return (
