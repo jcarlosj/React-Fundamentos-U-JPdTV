@@ -1,7 +1,8 @@
 .cart {
-    background-color: white;
+    background-color: #F1F1F1;
     position: fixed;
     top: 0;
     right: 0;
+    padding: 1rem;
     width: 350px;
 }

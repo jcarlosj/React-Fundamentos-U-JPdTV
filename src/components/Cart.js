@@ -5,12 +5,15 @@ import './cart.css';                // Importa Hoja de Estilos del Componente
 const Cart = ({ products }) => (        // Return Implicito & Destructuración del Props pasado como argumento
     <div className="cart">
         <h2>Carrito de compras</h2>
-        { products .map( product => (
-            <Product
-                key={ product.id }
-                product={ product }
-            />
-        ))}
+        { products.length === 0
+            ?   <p>No hay productos en el carrito.</p>
+            :   products .map( product => (
+                    <Product
+                        key={ product.id }
+                        product={ product }
+                    />
+                ))
+        }
     </div>
 );
 
