@@ -39,6 +39,7 @@ function App() {
             )) }
             <Cart
                 products={ stateShoppingCart }
+                addToCart={ setShoppingCart }   // Pasamos la funcion que modifica el estado actual del carrito de compras
             />
             <Footer
                 year={ currencyYear }

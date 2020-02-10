@@ -17,14 +17,34 @@ const Product = ({ product, products, cart, addToCart }) => {              // De
         ]);
     }
 
+    /** Eliminar Producto del carrito */
+    const deselectProduct = ( id ) => {
+        const products = cart .filter( ( product ) => product .id !== id );      // Filtra producto por ID descartando todos los que tienen el ID diferente al seleccionado 
+
+        /** Agrega Producto al State */
+        addToCart( products );
+    }
+
     return (
         <div>
             <h4>{ name }</h4>
             <p>${ price }</p>
-            <button
-                type="button"
-                onClick={ () => selectProduct( id ) }      // Evento Click en React: Los eventos en React a diferencia de JavaScript usan el on que antecede al nombre del evento y además no usan el nombre de la función si no que recomiendan usar un Callback asociado a esta, cabe recordar que todo lo que está entre las llaves es código JavaScript que puede ser interpretado por React.
-            >Agregar</button>
+            { /** Operador ternario para desplegar el Boton Agregar o Eliminar segun convenga. NOTA: Se usa un operador ternario por que en los return en React no se pueden usar condicionales clasicos */
+                products
+                ?   (   // Return  Implicito
+                        <button
+                            type="button"
+                            onClick={ () => selectProduct( id ) }      // Evento Click en React: Los eventos en React a diferencia de JavaScript usan el on que antecede al nombre del evento y además no usan el nombre de la función si no que recomiendan usar un Callback asociado a esta, cabe recordar que todo lo que está entre las llaves es código JavaScript que puede ser interpretado por React.
+                        >Agregar</button>
+                    )
+                :   (   // Return  Implicito
+                        <button
+                            type="button"
+                            onClick={ () => deselectProduct( id ) }      // Evento Click en React: Los eventos en React a diferencia de JavaScript usan el on que antecede al nombre del evento y además no usan el nombre de la función si no que recomiendan usar un Callback asociado a esta, cabe recordar que todo lo que está entre las llaves es código JavaScript que puede ser interpretado por React.
+                        >Eliminar</button>
+                    )
+
+            }
         </div>
     );
 }
