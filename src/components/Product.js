@@ -8,6 +8,13 @@ const Product = ({ product, products, cart, addToCart }) => {              // De
     const selectProduct = ( id ) => {
         const product = products .filter( ( product ) => product .id === id );      // Filtra producto por ID
         console.log( `Seleccionó Producto ${ id }`, product[ 0 ] );
+
+        /** Agrega Producto al Carrito de Compras */
+        // addToCart( product );        // Si hacemos esto solo modificará el State del Carrito cada que se haga click
+        addToCart([
+            ...cart,        // Usamos un Spread operator clonar los elementos que hayan en el carrito con el prodcuto que estamos agregando
+            product[ 0 ]    // Objeto del producto que vamos a agregar al carrito
+        ]);
     }
 
     return (
