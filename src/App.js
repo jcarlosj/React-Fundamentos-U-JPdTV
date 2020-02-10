@@ -26,7 +26,7 @@ function App() {
             <h1>Lista de Productos</h1>
             { stateProducts .map( product => (      // Usar parentesis y no las llaves en React es un return implicito
                 <Product
-                    key={ product .id }              // En un listado de componentes cada uno debe tener un key que lo haga unico
+                    key={ product.id }              // En un listado de componentes cada uno debe tener un key que lo haga unico
                     product={ product }             // Pasamos como Props los datos al Componente de Producto en este caso todo el objeto de cada producto
                 />
             )) }
