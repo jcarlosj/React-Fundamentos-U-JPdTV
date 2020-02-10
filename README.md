@@ -1,3 +1,7 @@
+# Carrito de Compras
+
+Este proyecto simula la funcionalidad de agregar y eliminar a un carrito de compras productos haciendo uso de los conceptos básicos fundamentales de React. (v16.12.0)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
