@@ -2,6 +2,8 @@ import React, { Fragment, useState } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
+import Product from './components/Product';
+
 function App() {
     /** Obtener año actual */
     const currencyYear = new Date().getFullYear();
@@ -21,7 +23,14 @@ function App() {
                 title='Tienda Virtual'        // Se pueden pasar: strings, numbers, booleans & functions
                 user='Ana Maria'
             />
-            <p>Fundamentos básicos de React</p>
+            <h1>Lista de Productos</h1>
+            { stateProducts .map( product => (      // Usar parentesis y no las llaves en React es un return implicito
+                <Product
+                    key={ product .id }              // En un listado de componentes cada uno debe tener un key que lo haga unico
+                    product={ product }             // Pasamos como Props los datos al Componente de Producto en este caso todo el objeto de cada producto
+                />
+            )) }
+
             <Footer
                 year={ currencyYear }
             />
